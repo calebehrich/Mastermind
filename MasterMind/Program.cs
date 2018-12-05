@@ -16,6 +16,31 @@ namespace MasterMind
 
         static void Main(string[] args)
         {
+            Program p = new Program();
+            int userAttempts = 1;
+            bool isComplete = false;
+
+            do
+            {
+                p.GetGuess();
+                Console.WriteLine("\n");
+                p.Compare(winningNumber, userNumber);
+                Console.WriteLine("\n");
+                if (correctNumbers == 4)
+                {
+                    Console.WriteLine("\n");
+                    Console.WriteLine("You guessed the right number. YOU WIN!!");
+                    isComplete = true;
+                }
+                if (userAttempts == 10)
+                {
+                    Console.WriteLine("\n");
+                    Console.WriteLine("You did not guess the number correctly. Better luck next time.");
+                    isComplete = true;
+                }
+                userAttempts++;
+                correctNumbers = 0;
+            } while (isComplete == false && userAttempts <= 10);
         }
 
         public void GetGuess()
