@@ -8,6 +8,8 @@ namespace MasterMind
 {
     class Program
     {
+        static Random rnd = new Random();
+        static List<int> winningNumber = new List<int> { rnd.Next(1, 6), rnd.Next(1, 6), rnd.Next(1, 6), rnd.Next(1, 6) };
         static List<int> userNumber = new List<int> { };
 
 
