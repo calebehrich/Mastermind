@@ -36,6 +36,12 @@ namespace MasterMind
                 {
                     Console.WriteLine("\n");
                     Console.WriteLine("You did not guess the number correctly. Better luck next time.");
+                    Console.Write("The winning number was: ");
+                    foreach(int i in winningNumber)
+                    {
+                        Console.Write(i);                       
+                    }
+                    Console.WriteLine("\n");
                     isComplete = true;
                 }
                 userAttempts++;
@@ -73,6 +79,7 @@ namespace MasterMind
                 if (winningNumber.Contains(userNumber[i]))
                 {
                     Console.Write("- ");
+                    userNumber[i] = 0;
                 }
             }
 
